@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace StayHard.Data.Models
 {
     public class SadrzajPlana
     {
+        [Key]
         public int SadrzajID { get; set; }
         [ForeignKey(nameof(PlanID))]
         public int PlanID { get; set; }

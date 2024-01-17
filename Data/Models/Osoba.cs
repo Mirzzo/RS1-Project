@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace StayHard.Data.Models
 {
@@ -13,11 +14,13 @@ namespace StayHard.Data.Models
         public string BrojTelefona { get; set; }
         public int GradId { get; set; }
         [ForeignKey(nameof(GradId))]
+        [JsonIgnore]
         public Grad Grad { get; set; }
         public int KarticaID { get; set; }
         [ForeignKey(nameof(KarticaID))]
+        [JsonIgnore]
         public KreditnaKartica KreditnaKartica { get; set; }
-        public byte[] Slika { get; set; }
+        public byte[]? Slika { get; set; }
 
 
     }
