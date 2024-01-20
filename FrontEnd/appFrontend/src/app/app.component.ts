@@ -1,14 +1,26 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { KorisnikRegistracijaComponent } from './components/korisnik-registracija/korisnik-registracija/korisnik-registracija.component';
 
 @Component({
-  selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, ReactiveFormsModule, RouterOutlet],
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  
+  /**
+   *
+   */
+  constructor(private router: Router) {}
+  
+  navigateToKorisnikRegistracija() {
+    this.router.navigate(['/korisnik-registracija']);
+  }
   title = 'appFrontend';
 }
