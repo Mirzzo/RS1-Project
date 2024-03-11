@@ -1,0 +1,10 @@
+input[type="text"],
+input[type="password"],
+input[type="date"] {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  width: 100%;
+  background-color: rgb(48, 48, 48);
+  color: gray;
+}
